@@ -36,6 +36,7 @@ module.exports = {
      }),
 
     new webpack.optimize.CommonsChunkPlugin( // Permet de découper mon bundle en plusieurs bouts. Un bout 
+
       'vendors',
       'vendors.bundle.js'
     ),
@@ -56,9 +57,17 @@ module.exports = {
       '{render}': 'react-dom',
       '{window.render}': 'react-com',
     }),
-
-    new webpack.optimize.DedupePlugin()
-  ],
+    new webpack.DefinePlugin({
+          'process.env':{
+            'NODE_ENV': JSON.stringify('production')
+          }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+          compress:{
+            warnings: true
+          }
+        })
+        
   module : {
     loaders : [
       {
