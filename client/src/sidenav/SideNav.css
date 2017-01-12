@@ -1,0 +1,5 @@
+.button-collapse{
+position: fixed;
+right: 0;
+z-index: 2;
+}

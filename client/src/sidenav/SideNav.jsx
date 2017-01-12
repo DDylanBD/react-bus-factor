@@ -1,7 +1,7 @@
 /**
 * @desc Ce component permet d'intégrer facilement le module sidenav de materialize
 */
-
+import './SideNav.css';
 class SideNav extends React.Component {
 
   // S'execute quand le HTML du component est entièrement chargé dans la page
